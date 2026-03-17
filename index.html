@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Saturn_shine</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+            background:
+                radial-gradient(circle at 20% 20%, rgba(90, 120, 255, 0.16), transparent 22%),
+                radial-gradient(circle at 80% 30%, rgba(150, 90, 255, 0.14), transparent 20%),
+                radial-gradient(circle at 50% 80%, rgba(80, 200, 255, 0.12), transparent 26%),
+                linear-gradient(135deg, #070b16 0%, #0a1020 35%, #0d1328 65%, #05070f 100%);
+            color: #eef3ff;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background-image:
+                radial-gradient(2px 2px at 12% 18%, rgba(255,255,255,0.75), transparent 60%),
+                radial-gradient(1.5px 1.5px at 28% 72%, rgba(255,255,255,0.55), transparent 60%),
+                radial-gradient(2px 2px at 64% 22%, rgba(255,255,255,0.7), transparent 60%),
+                radial-gradient(1.5px 1.5px at 82% 64%, rgba(255,255,255,0.55), transparent 60%),
+                radial-gradient(1.5px 1.5px at 46% 38%, rgba(255,255,255,0.4), transparent 60%),
+                radial-gradient(2px 2px at 70% 84%, rgba(255,255,255,0.5), transparent 60%);
+            pointer-events: none;
+            opacity: 0.85;
+        }
+
+        .page {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            position: relative;
+        }
+
+        .card {
+            width: min(920px, 92vw);
+            padding: 56px 34px;
+            border-radius: 28px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.10);
+            box-shadow:
+                0 20px 60px rgba(0, 0, 0, 0.45),
+                inset 0 1px 0 rgba(255, 255, 255, 0.08),
+                inset 0 -1px 0 rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: "";
+            position: absolute;
+            inset: -1px;
+            border-radius: 28px;
+            padding: 1px;
+            background: linear-gradient(
+                135deg,
+                rgba(130, 180, 255, 0.40),
+                rgba(255, 255, 255, 0.06),
+                rgba(180, 130, 255, 0.28)
+            );
+            -webkit-mask:
+                linear-gradient(#000 0 0) content-box,
+                linear-gradient(#000 0 0);
+            -webkit-mask-composite: xor;
+                    mask-composite: exclude;
+            pointer-events: none;
+        }
+
+        .title {
+            font-size: clamp(2.2rem, 5vw, 4.2rem);
+            line-height: 1.2;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            margin-bottom: 22px;
+            color: #f7fbff;
+            text-shadow:
+                0 0 10px rgba(255,255,255,0.12),
+                0 0 26px rgba(130, 180, 255, 0.18),
+                0 4px 20px rgba(0, 0, 0, 0.35);
+        }
+
+        .subtitle {
+            font-size: clamp(1rem, 2vw, 1.45rem);
+            line-height: 1.9;
+            color: rgba(228, 236, 255, 0.92);
+            margin-bottom: 10px;
+            text-shadow: 0 2px 14px rgba(0, 0, 0, 0.25);
+        }
+
+        .coming {
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            line-height: 1.8;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            color: #9fd3ff;
+            text-shadow:
+                0 0 12px rgba(90, 180, 255, 0.22),
+                0 2px 12px rgba(0, 0, 0, 0.28);
+        }
+
+        .glow-line {
+            width: 120px;
+            height: 2px;
+            margin: 0 auto 28px;
+            border-radius: 999px;
+            background: linear-gradient(
+                90deg,
+                rgba(255,255,255,0),
+                rgba(146, 201, 255, 0.95),
+                rgba(255,255,255,0)
+            );
+            box-shadow: 0 0 16px rgba(146, 201, 255, 0.5);
+        }
+
+        .footer-tip {
+            margin-top: 34px;
+            font-size: 0.92rem;
+            color: rgba(210, 220, 245, 0.5);
+            letter-spacing: 0.08em;
+        }
+
+        @media (max-width: 640px) {
+            .card {
+                padding: 42px 22px;
+                border-radius: 22px;
+            }
+
+            .card::before {
+                border-radius: 22px;
+            }
+
+            .subtitle {
+                line-height: 1.8;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="card">
+            <h1 class="title">𝒞𝒾𝒶𝓁𝓁𝑜 ~ (∠ · ω&lt; )︵☆</h1>
+            <div class="glow-line"></div>
+            <p class="subtitle">这是 Saturn_shine 的个人网站，目前正在建造中 ~</p>
+            <p class="coming">敬 请 期 待</p>
+            <div class="footer-tip">UNDER CONSTRUCTION</div>
+        </div>
+    </div>
+</body>
+</html>
